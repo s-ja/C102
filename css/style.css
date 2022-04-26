@@ -1,0 +1,256 @@
+@charset "utf-8";
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* html{
+    font-size: 32px;
+} */
+body{
+    font: 16px/1.5 dotum, gulim;
+    color: #333;
+    background: #fff;
+}
+a,a:link{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+.d_none{
+    display: none;
+}
+#popup{
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.popup_box{
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.popup_box > h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: palevioletred;
+    text-align: center;
+}
+.popup_box > ul{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1rem;
+    font-size: .9em;
+    list-style: disc inside;
+}
+.popup_box > p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    margin-top: 1rem;
+    font-size: .8em;
+    text-align: center;
+    color: palevioletred;
+}
+.popup_box > button{
+    border-style: none;
+    background: plum;
+    border-radius: 10px;
+    padding: 3px 5px;
+    margin-top: 20px;
+}
+.wrap{
+    width: 1000px;
+    height: 650px;
+    overflow: hidden;
+}
+.column_left{
+    width: 25%;
+    float: left;
+    /* background: gold; */
+}
+.header{
+    margin: 0 25px;
+}
+.menu{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.highlight{
+    border: 1px solid palevioletred;
+    /* color: #333; */
+    font-weight: 900;
+    background: #eee;
+}
+#gnb > li > a{
+    display: block;
+}
+.logo{
+    margin: 0 0 1rem 0;
+}
+.lnb{
+    display: none;
+    border: 1px solid palevioletred;
+}
+.lnb > li:hover{
+    background: #eee;
+    /* color: palevioletred; */
+}
+.lnb > li:hover a{
+    color: palevioletred;
+    font-weight: 900;
+}
+.column_right{
+    float: right;
+    width: 75%;
+}
+.slide{
+    height: 350px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.slide > div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    opacity: 0;
+    transition: all ease-in-out .3s;
+    text-indent: 10px;
+}
+.slide > div h2{
+    margin: 1rem 0 0 1rem;
+    background: linear-gradient(to right,rgba(0, 0, 0, 0.5), rgb(0, 0, 0, .1));
+    font-weight: 900;
+    font-size: 2rem;
+}
+.slide > div p{
+    margin: 1em;
+    font-weight: 900;
+}
+.slide > div:nth-child(1){
+    background: url("../images/slide1.jpg") no-repeat center / cover;
+}
+.slide > div:nth-child(2){
+    background: url("../images/slide2.jpg") no-repeat center / cover;
+}
+.slide > div:nth-child(3){
+    background: url("../images/slide3.jpg") no-repeat center / cover;
+}
+.top{
+    z-index: 1;
+    opacity: 1 !important;
+}
+.contents{
+    height: 200px;
+    display: flex;
+    column-gap: 1rem;
+}
+.news, .gallery, .icons{
+    /* flex: 1; */
+}
+.news{
+    /* flex: 1.2; */
+    flex: 1;
+}
+.gallery{
+    flex: 1;
+}
+.icons{
+    flex: 1;
+}
+.icons ul{
+    display: flex;
+    margin: 4rem 0 0 0;
+}
+.icons li{
+    flex: 1 1 50px;
+    /* width: calc(33.333333% - 10px); */
+    /* margin: 0 10px; */
+    text-align: center;
+}
+.icons img{
+    max-width: 100%;
+}
+.icons p{
+    font-weight: 900;
+    font-size: .825em;
+}
+.gallery ul{
+    display: flex;
+    column-gap: 10px;
+}
+.gallery img{
+    max-width: 100%;
+}
+.news, .gallery{
+    /* font-size: 20px; */
+}
+.news h2, .gallery h2{
+    border-bottom:2px solid palevioletred;
+    color: #333;
+    font-weight: bolder;
+    font-size: 1.25em;
+    /* ^ 16px 로 세팅하라는 말과 동일 */
+    /* rem(html 요소 기준) vs em(바로 윗 부모 기준) */
+    margin: 1rem 0;
+    padding: .5rem;
+}
+.news ul{
+    font-size: .75em;
+    letter-spacing: -1px;
+    /* list-style: disc inside; */
+    /* margin: 0 0 0 1rem; */
+    list-style-image: url(../images/flag.png);
+}
+.news ul li {
+    margin: 0 0 5px 0;
+}
+.footer{
+    height: 100px;
+    display: flex;
+    font-size: 82.5%;
+    border-top: 2px solid palevioletred;
+    padding: .5rem 0 0 0;
+    background: #eee;
+    /* text-indent: 10px; */
+}
+.copy{
+    text-indent: 20px;
+    flex: 7;
+    /* order: 2; */
+}
+.info{
+    flex: 3;
+    /* order: 1; */
+}
+.sns{
+    display: flex;
+    justify-content: center;
+    column-gap: 5px;
+}
+.sns li{
+    width: calc(33.333333% - 20px);
+}
+.sns img{
+    max-width: 100%;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
